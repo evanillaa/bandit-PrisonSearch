@@ -1,6 +1,6 @@
 # bandit-PrisonSearch
 
-# Contact / Support
+# Support
 Discord: Bandit#3068
 
 # Requirement
