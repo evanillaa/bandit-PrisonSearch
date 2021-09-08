@@ -1,8 +1,5 @@
 # bandit-PrisonSearch
 
-# Credits
-Credits to Bandit
-
 # Contact / Support
 Discord: Bandit#3068
 
