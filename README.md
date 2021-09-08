@@ -1,8 +1,21 @@
 # bandit-PrisonSearch
 
+Credits
+Credits to Bandit
 
-Si jamais il y a un problème, vous pouvez me contacter sur discord
+Contact / Support
 
 Discord: Bandit#3068
 
-Si vous avez des idées à ajouter, vous pouvez me les faire part
+
+Requirement
+https://forum.cfx.re/t/release-progress-bars-1-0-standalone/526287
+
+
+Installation
+
+1) Ajoutes `ensure bandit-PrisonSearch` dans ton server.cfg
+2) Mets le dossier dans ton dossier resources
+
+License
+Redistribution of this resource is strictly prohibited, and can only be done with the agreement of Bandit
