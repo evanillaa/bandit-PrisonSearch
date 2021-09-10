@@ -6,13 +6,11 @@ TriggerEvent('esx:getSharedObject', function(obj)
    
 
 
-RegisterServerEvent('BanditSearch:GiveRandomItems')
-AddEventHandler('BanditSearch:GiveRandomItems', function()
+RegisterServerEvent('banditSearch:giveRandomItems')
+AddEventHandler('banditSearch:giveRandomItems', function()
     local _source = source
-    local xPlayer = ESX.GetPlayerFromId(_source)
-        for i = 1, math.random(1, 1), 1 do
-            local chance = math.random(Config.BanditSearch.Chance.mininum, Config.BanditSearch.Chance.maximum)
-            local item = Config.BanditSearch.GiveRandomItems[math.random(1, #Config.BanditSearch.GiveRandomItems)]
-            xPlayer.addInventoryItem(item, chance)
-        end
+    local xPlayer = ESX.GetPlayerFromId(source)
+    local chance = math.random(Config.banditSearch.Chance.mininum, Config.banditSearch.Chance.maximum)
+    local item = Config.banditSearch.giveRandomItems[math.random(1, #Config.banditSearch.giveRandomItems)]
+    xPlayer.addInventoryItem(item, chance)
 end)
