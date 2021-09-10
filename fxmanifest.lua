@@ -2,7 +2,7 @@
 fx_version "adamant"
 game "gta5"
 
-author 'Bandit#3068'
+author 'Bandit#3068 / GRIZY#5968'
 description 'Récolte de point'
 version '1.0.0'
 
