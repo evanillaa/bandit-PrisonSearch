@@ -10,20 +10,20 @@ end)
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(1)
-        for k,v in pairs(Config.BanditSearch.SearchPositions) do
+        for k,v in pairs(Config.banditSearch.searchPositions) do
             local playerPed =  PlayerPedId()
             local coords = GetEntityCoords(playerPed)
-            if (GetDistanceBetweenCoords(coords, v.x, v.y, v.z, true) < 0.5)  then
-                DrawText3D(v.x, v.y, v.z, (Config.BanditSearch.Drawtext))
+            if (GetDistanceBetweenCoords(coords, v.xyz, true) < 0.5)  then
+                DrawText3D(v.xyz, (Config.banditSearch.drawText))
                 if IsControlJustReleased(0, 38) then
-                    TaskStartScenarioInPlace(playerPed, Config.BanditSearch.Animation, 0, true)
-                    exports['progressBars']:startUI(Config.BanditSearch.ProgressBarTimer, Config.BanditSearch.ProgressBarTimerText)
-                    Wait(Config.BanditSearch.ProgressBarTimer)
-                    TriggerServerEvent('BanditSearch:GiveRandomItems')
+                    TaskStartScenarioInPlace(playerPed, Config.banditSearch.Animation, 0, true)
+                    exports['progressBars']:startUI(Config.banditSearch.progressBarTimer, Config.banditSearch.progressBarTimerText)
+                    Wait(Config.banditSearch.progressBarTimer)
+                    TriggerServerEvent('banditSearch:giveRandomItems')
                     ClearPedTasks(playerPed)
                 end
             else
-                Citizen.Wait(Config.BanditSearch.SleepThread)
+                Citizen.Wait(Config.banditSearch.sleepThread)
             end
             break
         end
