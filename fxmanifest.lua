@@ -10,5 +10,7 @@ client_scripts {
     'client/bandit-client.lua',
     'config.lua'
 }
-server_script 'server/bandit-server.lua'
-server_script 'config.lua'
+server_scripts {
+	'server/bandit-server.lua',
+    'config.lua'
+}
