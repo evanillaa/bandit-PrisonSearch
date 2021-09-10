@@ -1,25 +1,26 @@
 Citizen.CreateThread(function()
-    while true do
-        Citizen.Wait(1)
-        for k,v in pairs(Config.banditSearch.searchPositions) do
-            local playerPed =  PlayerPedId()
-            local coords = GetEntityCoords(playerPed)
-            if (GetDistanceBetweenCoords(coords, v.xyz, true) < 0.5)  then
-                DrawText3D(v.xyz, (Config.banditSearch.drawText))
-                if IsControlJustReleased(0, 38) then
-                    TaskStartScenarioInPlace(playerPed, Config.banditSearch.Animation, 0, true)
-                    exports['progressBars']:startUI(Config.banditSearch.progressBarTimer, Config.banditSearch.progressBarTimerText)
-                    Wait(Config.banditSearch.progressBarTimer)
-                    TriggerServerEvent('banditSearch:giveRandomItems')
-                    ClearPedTasks(playerPed)
-                end
-            else
-                Citizen.Wait(Config.banditSearch.sleepThread)
+	while true do
+        time = 500
+		for _,v in pairs(Config.banditSearch.searchPositions) do
+		    local playerPed =  PlayerPedId()
+            local plypos = GetEntityCoords(playerPed)
+            local dist = #(v[1].xyz - plypos)
+            if dist < 0.5 then
+                time = 5 DrawText3D(v.xyz, (Config.banditSearch.drawText)) if IsControlJustPressed(0,38) then getStock() end
             end
-            break
-        end
-    end
+		end
+		Citizen.Wait(time)
+	end
 end)
+
+getStock = function()
+    local playerPed =  PlayerPedId()
+    TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
+    exports['progressBars']:startUI(Config.banditSearch.progressBarTimer, Config.banditSearch.progressBarTimerText)
+    Wait(Config.banditSearch.progressBarTimer)
+    TriggerServerEvent('banditSearch:giveRandomItems')
+    ClearPedTasks(playerPed)
+end
 
 
 function DrawText3D(x,y,z, text)
