@@ -1,9 +1,9 @@
 Config = {}
 
 
-Config.BanditSearch = {
+Config.banditSearch = {
 
-    SearchPositions = {
+    searchPositions = {
         {x=1763.23, y=2570.81, z=50.55},
         {x=1769.05, y=2578.62, z=45.8},
         {x=1766.14, y=2580.2, z=50.55},
@@ -18,7 +18,7 @@ Config.BanditSearch = {
 
     -- Tu peux mettre tes items customs ici -->
 
-    GiveRandomItems = {
+    giveRandomItems = {
            "bread",
            "weed"
     },
@@ -28,15 +28,15 @@ Config.BanditSearch = {
         maximum = 4
     },
 
-    Drawtext = "[~g~E~s~] pour chercher...",
+    drawText = "[~g~E~s~] pour chercher...",
 
-    ProgressBarTimer = 20000,
+    progressBarTimer = 20000,
 
-    ProgressBarTimerText = "Vous cherchez des items...",
+    progressBarTimerText = "Vous cherchez des items...",
 
     Animation = 'PROP_HUMAN_BUM_BIN',
 
-    SleepThread = 1000
+    sleepThread = 1000
 }
 
 
