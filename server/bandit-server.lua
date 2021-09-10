@@ -1,11 +1,3 @@
- ESX = nil
-
-TriggerEvent('esx:getSharedObject', function(obj)
-    ESX = obj
-   end)
-   
-
-
 RegisterServerEvent('BanditSearch:GiveRandomItems')
 AddEventHandler('BanditSearch:GiveRandomItems', function()
     local _source = source
